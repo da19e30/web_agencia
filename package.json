@@ -1,0 +1,13 @@
+{
+  "name": "mapgenius-backend",
+  "version": "1.0.0",
+  "description": "Backend para MapGenius Solutions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "sql.js": "^1.10.2"
+  }
+}

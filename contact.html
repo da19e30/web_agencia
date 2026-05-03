@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | MapGenius Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">MapGenius</div>
+    <ul class="nav-links">
+      <li><a href="index.html#hero">Inicio</a></li>
+      <li><a href="index.html#services">Servicios</a></li>
+      <li><a href="index.html#pricing">Precios</a></li>
+      <li><a href="contact.html" class="active">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-hero">
+    <div class="page-hero-content">
+      <h1>Contacto</h1>
+      <p>Cuéntanos sobre tu proyecto y hagámoslo realidad</p>
+    </div>
+  </header>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2>Hablemos</h2>
+        <p>Estamos listos para ayudarte a llevar tu negocio al siguiente nivel. Completa el formulario y te responderemos en menos de 24 horas.</p>
+        <div class="info-items">
+          <div class="info-item">
+            <div class="info-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p>info@mapgenius.com</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📞</div>
+            <div>
+              <h4>Teléfono</h4>
+              <p>+57 314 727 5757 (Colombia)</p>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="info-icon">📍</div>
+            <div>
+              <h4>Ubicación</h4>
+              <p>Colombia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div id="formMessage" class="form-message" style="display:none;"></div>
+        <div class="form-group">
+          <label for="name">Nombre completo</label>
+          <input type="text" id="name" placeholder="Tu nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="tu@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="service">Servicio de interés</label>
+          <select id="service" required>
+            <option value="" disabled selected>Elige un servicio</option>
+            <option value="desarrollo">Desarrollo Web</option>
+            <option value="seo">SEO Local</option>
+            <option value="diseno">Diseño Web</option>
+            <option value="all">Paquete completo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="budget">Presupuesto estimado</label>
+          <select id="budget">
+            <option value="" disabled selected>Selecciona tu presupuesto</option>
+            <option value="150">$150 (Desarrollo Web)</option>
+            <option value="50">$50/mes (SEO Local)</option>
+            <option value="100">$100 (Diseño Web)</option>
+            <option value="3000+">$3000+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" rows="5" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Enviar mensaje →</button>
+      </form>
+      <script>
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const formMessage = document.getElementById('formMessage');
+          const data = {
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            service: document.getElementById('service').value,
+            budget: document.getElementById('budget').value,
+            message: document.getElementById('message').value.trim()
+          };
+          try {
+            const resp = await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(data)
+            });
+            const result = await resp.json();
+            if (result.success) {
+              formMessage.style.display = 'block';
+              formMessage.style.color = 'green';
+              formMessage.textContent = result.message;
+              this.reset();
+            } else {
+              throw new Error(result.error || 'Error al enviar');
+            }
+          } catch (err) {
+            formMessage.style.display = 'block';
+            formMessage.style.color = 'red';
+            formMessage.textContent = err.message;
+          }
+        });
+      </script>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h3>MapGenius</h3>
+        <p>Soluciones inteligentes para tu negocio.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navegación</h4>
+        <a href="index.html#hero">Inicio</a>
+        <a href="index.html#services">Servicios</a>
+        <a href="index.html#pricing">Precios</a>
+        <a href="contact.html">Contacto</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <p>info@mapgenius.com</p>
+        <p>+34 600 123 456</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 MapGenius Solutions. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
