@@ -1,13 +1,12 @@
 {
-  "name": "mapgenius-backend",
+  "name": "mapgenius-web",
   "version": "1.0.0",
-  "description": "Backend para MapGenius Solutions",
-  "main": "server.js",
+  "description": "MapGenius Solutions - Web Premium con animaciones de scroll",
   "scripts": {
-    "start": "node server.js"
+    "build": "echo 'No build required'",
+    "vercel-build": "echo 'No build required'"
   },
   "dependencies": {
-    "express": "^4.18.2",
     "sql.js": "^1.10.2"
   }
 }
