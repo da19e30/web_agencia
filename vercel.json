@@ -5,6 +5,14 @@
       "runtime": "nodejs18.x"
     }
   },
+  "env": {
+    "SMTP_HOST": "smtp.example.com",
+    "SMTP_PORT": "587",
+    "SMTP_USER": "your_user",
+    "SMTP_PASS": "your_pass",
+    "WELCOME_FROM": "no-reply@example.com",
+    "WELCOME_SUBJECT": "Gracias por contactarnos"
+  },
   "routes": [
     {
       "handle": "filesystem"
