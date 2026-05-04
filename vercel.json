@@ -1,22 +1,37 @@
 {
   "version": 2,
-  "builds": [
+  "routes": [
     {
-      "src": "api/**/*.js",
-      "use": "@vercel/node"
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
     },
     {
-      "src": "index.html",
-      "use": "@vercel/static",
-      "config": {
-        "distDir": "."
-      }
-    }
-  ],
-  "rewrites": [
+      "src": "/style.css",
+      "dest": "/style.css"
+    },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/script.js",
+      "dest": "/script.js"
+    },
+    {
+      "src": "/admin.html",
+      "dest": "/admin.html"
+    },
+    {
+      "src": "/contact.html",
+      "dest": "/contact.html"
+    },
+    {
+      "src": "/contacto",
+      "dest": "/contact.html"
+    },
+    {
+      "src": "/administrador",
+      "dest": "/admin.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
