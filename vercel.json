@@ -1,33 +1,17 @@
 {
   "version": 2,
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "/api/$1"
     },
     {
-      "src": "/style.css",
-      "dest": "/style.css"
-    },
-    {
-      "src": "/script.js",
-      "dest": "/script.js"
-    },
-    {
-      "src": "/admin.html",
-      "dest": "/admin.html"
-    },
-    {
-      "src": "/contact.html",
-      "dest": "/contact.html"
-    },
-    {
-      "src": "/contacto",
-      "dest": "/contact.html"
-    },
-    {
-      "src": "/administrador",
-      "dest": "/admin.html"
+      "handle": "filesystem"
     },
     {
       "src": "/(.*)",
