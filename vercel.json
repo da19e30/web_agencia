@@ -11,6 +11,18 @@
       "dest": "/api/$1"
     },
     {
+      "src": "/contact",
+      "dest": "/contact.html"
+    },
+    {
+      "src": "/admin",
+      "dest": "/admin.html"
+    },
+    {
+      "src": "/contacto",
+      "dest": "/contact.html"
+    },
+    {
       "handle": "filesystem"
     },
     {
