@@ -2,8 +2,8 @@ const fs = require('fs');
 
 const SUBMISSIONS_PATH = '/tmp/submissions.json';
 
-module.exports = async (req, res) => {
-  // Enable CORS
+async function handler(req, res) {
+  // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -26,4 +26,7 @@ module.exports = async (req, res) => {
     console.error('Error reading submissions:', err);
     return res.status(500).json({ error: 'Error interno del servidor' });
   }
-};
+}
+
+module.exports = handler;
+export default handler;
