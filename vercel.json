@@ -7,26 +7,6 @@
   },
   "routes": [
     {
-      "src": "/api/contact",
-      "dest": "/api/contact.js"
-    },
-    {
-      "src": "/api/submissions",
-      "dest": "/api/submissions.js"
-    },
-    {
-      "src": "/contact",
-      "dest": "/contact.html"
-    },
-    {
-      "src": "/admin",
-      "dest": "/admin.html"
-    },
-    {
-      "src": "/contacto",
-      "dest": "/contact.html"
-    },
-    {
       "handle": "filesystem"
     },
     {
