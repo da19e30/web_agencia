@@ -15,7 +15,7 @@
       <li><a href="/">Inicio</a></li>
       <li><a href="/#services">Servicios</a></li>
       <li><a href="/#pricing">Precios</a></li>
-      <li><a href="/contact">Contacto</a></li>
+      <li><a href="/#contact">Contacto</a></li>
     </ul>
   </nav>
 
@@ -113,7 +113,7 @@
             if (result.success) {
               formMessage.style.display = 'block';
               formMessage.style.color = 'green';
-              formMessage.textContent = result.message;
+              formMessage.innerHTML = result.message + '<br><small>Hemos enviado un correo de bienvenida a tu email.</small>';
               this.reset();
             } else {
               throw new Error(result.error || 'Error al enviar');
@@ -139,7 +139,7 @@
         <a href="/">Inicio</a>
         <a href="/#services">Servicios</a>
         <a href="/#pricing">Precios</a>
-        <a href="/contact">Contacto</a>
+        <a href="/#contact">Contacto</a>
       </div>
       <div class="footer-contact">
         <h4>Contacto</h4>
