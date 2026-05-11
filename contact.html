@@ -6,16 +6,16 @@
   <title>Contacto | MapGenius Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <nav class="navbar" id="navbar">
     <div class="nav-brand">MapGenius</div>
     <ul class="nav-links">
-      <li><a href="index.html#hero">Inicio</a></li>
-      <li><a href="index.html#services">Servicios</a></li>
-      <li><a href="index.html#pricing">Precios</a></li>
-      <li><a href="contact.html" class="active">Contacto</a></li>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/#services">Servicios</a></li>
+      <li><a href="/#pricing">Precios</a></li>
+      <li><a href="/#contact">Contacto</a></li>
     </ul>
   </nav>
 
@@ -82,7 +82,8 @@
             <option value="150">$150 (Desarrollo Web)</option>
             <option value="50">$50/mes (SEO Local)</option>
             <option value="100">$100 (Diseño Web)</option>
-            <option value="3000+">$3000+</option>
+            <option value="100">$50 (Optimizacion SEO)</option>
+            <option value="3000+">$400+</option>
           </select>
         </div>
         <div class="form-group">
@@ -112,7 +113,7 @@
             if (result.success) {
               formMessage.style.display = 'block';
               formMessage.style.color = 'green';
-              formMessage.textContent = result.message;
+              formMessage.innerHTML = result.message + '<br><small>Hemos enviado un correo de bienvenida a tu email.</small>';
               this.reset();
             } else {
               throw new Error(result.error || 'Error al enviar');
@@ -135,15 +136,15 @@
       </div>
       <div class="footer-links">
         <h4>Navegación</h4>
-        <a href="index.html#hero">Inicio</a>
-        <a href="index.html#services">Servicios</a>
-        <a href="index.html#pricing">Precios</a>
-        <a href="contact.html">Contacto</a>
+        <a href="/">Inicio</a>
+        <a href="/#services">Servicios</a>
+        <a href="/#pricing">Precios</a>
+        <a href="/#contact">Contacto</a>
       </div>
       <div class="footer-contact">
         <h4>Contacto</h4>
         <p>info@mapgenius.com</p>
-        <p>+34 600 123 456</p>
+        <p>+57 314 727 5757</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -151,6 +152,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="/script.js"></script>
 </body>
 </html>
